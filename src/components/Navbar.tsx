@@ -33,11 +33,11 @@ const Navbar = () => {
     //   ),
     //   href: '/about',
     // },
-    {
-      title: 'Skills',
-      icon: <Briefcase className='h-full w-full ' />,
-      href: '/skills',
-    },
+    // {
+    //   title: 'Skills',
+    //   icon: <Briefcase className='h-full w-full ' />,
+    //   href: '/skills',
+    // },
     // {
     //   title: 'Education',
     //   icon: <GraduationCap className='h-full w-full ' />,
