@@ -7,6 +7,14 @@ const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ['@react-email/render'],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'text-image.tool.vin',
+      },
+    ],
+  },
 }
 
 module.exports = withNextIntl(nextConfig)

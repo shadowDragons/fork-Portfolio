@@ -10,23 +10,27 @@ const Projects = () => {
     {
       title: t('text2image.title'),
       description: t('text2image.description'),
-      image: '/og-image.png',
+      image: 'https://text-image.tool.vin/og.png',
       tags: ['Nextjs', 'Tailwindcss', 'Shadcn Ui'],
       link: 'https://github.com/shadowDragons/text2image',
     },
     {
-      title: t('text2image.title'),
-      description: t('text2image.description'),
+      title: t('tool-site.title'),
+      description: t('tool-site.description'),
       image: '/og-image.png',
-      tags: ['Nextjs', 'Tailwindcss', 'Shadcn Ui'],
-      link: 'https://github.com/shadowDragons/text2image',
+      link: 'https://tool.directory.cab/',
     },
     {
-      title: t('text2image.title'),
-      description: t('text2image.description'),
+      title: t('blog.title'),
+      description: t('blog.description'),
       image: '/og-image.png',
-      tags: ['Nextjs', 'Tailwindcss', 'Shadcn Ui'],
-      link: 'https://github.com/shadowDragons/text2image',
+      link: 'https://blog.byte.ink',
+    },
+    {
+      title: t('online-tool.title'),
+      description: t('online-tool.description'),
+      image: '/og-image.png',
+      link: 'https://online.tool.vin',
     },
   ]
 
@@ -34,7 +38,7 @@ const Projects = () => {
     <section id='projects' className='w-full py-10 scroll-mt-28 mt-14'>
       <FramerWrapper y={50} x={0}>
         <Heading>{t('heading')}</Heading>
-        <div className='w-full mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+        <div className='w-full mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8'>
           {projects.map((project, index) => (
             <ProjectCards key={index} value={project} num={index} />
           ))}
