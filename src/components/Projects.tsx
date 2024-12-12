@@ -8,22 +8,10 @@ const Projects = () => {
 
   const projects = [
     {
-      title: t('portfolio.title'),
-      description: t('portfolio.description'),
-      tags: ['Nextjs', 'Typescript', 'Shadcn Ui'],
-      link: 'https://github.com/yourusername/portfolio',
-    },
-    {
-      title: t('ecommerce.title'),
-      description: t('ecommerce.description'),
-      tags: ['React', 'Node.js', 'MongoDB'],
-      link: 'https://github.com/yourusername/ecommerce',
-    },
-    {
-      title: t('social.title'),
-      description: t('social.description'),
-      tags: ['MongoDB', 'Express', 'React'],
-      link: 'https://github.com/yourusername/social-media',
+      title: t('text2image.title'),
+      description: t('text2image.description'),
+      tags: ['Nextjs', 'Tailwindcss', 'Shadcn Ui'],
+      link: 'https://github.com/shadowDragons/text2image',
     },
   ]
 

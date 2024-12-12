@@ -25,17 +25,9 @@
   "Projects": {
     "heading": "项目展示",
     "visit": "访问项目",
-    "portfolio": {
-      "title": "个人作品集网站",
-      "description": "使用 Next.js 和 Shadcn UI 构建的现代个人作品集网站，具有动画效果和响应式设计。"
-    },
-    "ecommerce": {
-      "title": "在线商城系统",
-      "description": "基于 React 和 Node.js 的全栈电商平台，支持用户认证、商品管理和支付功能。"
-    },
-    "social": {
-      "title": "社交媒体应用",
-      "description": "使用 MERN 技术栈开发的社交媒体平台，支持实时聊天和帖子分享。"
+    "text2image": {
+      "title": "字节在线文转图",
+      "description": "一款具有多种模板和样式的现代文本到图片生成器。采用 Next.js 14 和 TypeScript 构建，支持暗模式和 i18n。"
     }
   }
 }
