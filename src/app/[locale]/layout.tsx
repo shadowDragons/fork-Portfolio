@@ -73,15 +73,17 @@ export default async function RootLayout({ children, params: { locale } }: { chi
   return (
     <html lang={locale}>
       <body className={`${poppins.variable} ${rubik.variable}`}>
-        <Navbar />
-        <main
-          className={cn(
-            'flex flex-col relative break-words min-h-screen pt-14 pb-4 px-40 max-md:p-4 bg-transparent max-sm:pt-20 bg-[radial-gradient(#2f7df4_1px,transparent_1px)] [background-size:16px_16px]',
-            { 'bg-white': '#E6E7EB' }
-          )}
-        >
-          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
-        </main>
+        <NextIntlClientProvider messages={messages}>
+          <Navbar />
+          <main
+            className={cn(
+              'flex flex-col relative break-words min-h-screen pt-14 pb-4 px-40 max-md:p-4 bg-transparent max-sm:pt-20 bg-[radial-gradient(#2f7df4_1px,transparent_1px)] [background-size:16px_16px]',
+              { 'bg-white': '#E6E7EB' }
+            )}
+          >
+            {children}
+          </main>
+        </NextIntlClientProvider>
       </body>
       <GoogleAnalytics gaId='G-40820HPGL6' />
     </html>

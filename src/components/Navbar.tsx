@@ -3,11 +3,14 @@
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { buttonVariants } from './ui/button'
+import { useTranslations } from 'next-intl'
 
 const Navbar = () => {
+  const t = useTranslations('Navbar')
+
   const links = [
-    { name: '你好👋', link: '#' },
-    { name: '项目', link: '#projects' },
+    { name: t('greeting'), link: '#' },
+    { name: t('projects'), link: '#projects' },
   ]
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -29,7 +32,7 @@ const Navbar = () => {
     <nav className='fixed top-0 z-50 w-full h-14 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
       <div className='flex h-14 items-center justify-between px-40 max-md:px-4'>
         <Link href='#' onClick={e => handleScroll(e, '#')} className='font-rubik text-xl'>
-          Junexus
+          {t('logo')}
         </Link>
         <div className='flex gap-2'>
           {links.map((item, index) => (

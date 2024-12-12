@@ -2,5 +2,40 @@
   "HomePage": {
     "title": "Hello world!",
     "about": "Go to the about page"
+  },
+  "Hero": {
+    "greeting": "Hi I am",
+    "name": "Junexus ."
+  },
+  "Navbar": {
+    "logo": "Junexus",
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "greeting": "Hello👋"
+  },
+  "TextRotator": {
+    "role1": "Frontend Developer",
+    "role2": "UI/UX Designer",
+    "role3": "Full Stack Developer",
+    "intro": "I am a full-stack engineer",
+    "rotatingTitles": ["Developer", "开发者", "Creator", "创造者"]
+  },
+  "Projects": {
+    "heading": "Projects",
+    "visit": "Visit Project",
+    "portfolio": {
+      "title": "Personal Portfolio Website",
+      "description": "A modern portfolio website built with Next.js and Shadcn UI, featuring animations and responsive design."
+    },
+    "ecommerce": {
+      "title": "E-commerce Platform",
+      "description": "A full-stack e-commerce platform based on React and Node.js, supporting user authentication, product management, and payment features."
+    },
+    "social": {
+      "title": "Social Media Application",
+      "description": "A social media platform developed with MERN stack, supporting real-time chat and post sharing."
+    }
   }
 }
