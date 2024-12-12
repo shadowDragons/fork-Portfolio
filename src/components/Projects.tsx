@@ -17,19 +17,19 @@ const Projects = () => {
     {
       title: t('tool-site.title'),
       description: t('tool-site.description'),
-      image: '/og-image.png',
+      image: '/tool-site-og-image.png',
       link: 'https://tool.directory.cab/',
     },
     {
       title: t('blog.title'),
       description: t('blog.description'),
-      image: '/og-image.png',
+      image: '/blog-og-image.png',
       link: 'https://blog.byte.ink',
     },
     {
       title: t('online-tool.title'),
       description: t('online-tool.description'),
-      image: '/og-image.png',
+      image: '/online-tool-og-image.png',
       link: 'https://online.tool.vin',
     },
   ]

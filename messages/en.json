@@ -20,11 +20,8 @@
     }
   },
   "TextRotator": {
-    "role1": "Frontend Developer",
-    "role2": "UI/UX Designer",
-    "role3": "Full Stack Developer",
-    "intro": "I am a full-stack engineer",
-    "rotatingTitles": ["Developer", "开发者", "Creator", "创造者"]
+    "intro": "I am a full-stack",
+    "rotatingTitles": ["Creator", "Developer", "Contributor", "Engineer", "Builder", "Innovator"]
   },
   "Projects": {
     "heading": "Projects",
@@ -38,7 +35,7 @@
       "description": "A navigation website featuring hundreds of practical tools from China and abroad, including efficiency tools, AI tools, learning tools, development tools, audio resources, video resources, design tools, and creative tools."
     },
     "blog": {
-      "title": "Path to Independent Development Retirement",
+      "title": "blog",
       "description": "A blog documenting the growth journey of an independent developer, including daily life, technical sharing, and project experiences."
     },
     "online-tool": {
