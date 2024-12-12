@@ -5,6 +5,11 @@ import { cn } from '@/lib/utils'
 import Navbar from '@/components/Navbar'
 import { siteConfig } from './page'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
+import { notFound } from 'next/navigation'
+import { routing } from '@/i18n/routing'
+
 const poppins = Poppins({
   subsets: ['latin'],
   weight: '400',
@@ -55,9 +60,18 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children, params: { locale } }: { children: React.ReactNode; params: { locale: string } }) {
+  // Ensure that the incoming `locale` is valid
+  if (!routing.locales.includes(locale as any)) {
+    notFound()
+  }
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages()
+
   return (
-    <html lang='en'>
+    <html lang={locale}>
       <body className={`${poppins.variable} ${rubik.variable}`}>
         <Navbar />
         <main
@@ -66,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             { 'bg-white': '#E6E7EB' }
           )}
         >
-          {children}
+          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
         </main>
       </body>
       <GoogleAnalytics gaId='G-40820HPGL6' />
