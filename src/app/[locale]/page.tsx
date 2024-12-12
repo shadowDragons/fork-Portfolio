@@ -10,13 +10,6 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
 
-export const siteConfig = {
-  name: 'Junexus',
-  description: 'I am a Full Stack Developer',
-  ogImage: 'https://mdTaquiImam.vercel.app/og-image.png',
-  url: 'https://mdTaquiImam.vercel.app',
-}
-
 export default function Home() {
   return (
     <>

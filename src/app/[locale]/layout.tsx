@@ -3,7 +3,6 @@ import { Poppins, Rubik } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
 import Navbar from '@/components/Navbar'
-import { siteConfig } from './page'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
@@ -20,6 +19,13 @@ const rubik = Rubik({
   weight: '600',
   variable: '--font-rubik',
 })
+
+const siteConfig = {
+  name: 'Junexus',
+  description: 'I am a Full Stack Developer',
+  ogImage: 'https://mdTaquiImam.vercel.app/og-image.png',
+  url: 'https://mdTaquiImam.vercel.app',
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.byte.ink'),
