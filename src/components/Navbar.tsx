@@ -4,9 +4,12 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { buttonVariants } from './ui/button'
 import { useTranslations } from 'next-intl'
+import { useState } from 'react'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const Navbar = () => {
   const t = useTranslations('Navbar')
+  const [isOpen, setIsOpen] = useState(false)
 
   const links = [
     { name: t('greeting'), link: '#' },
@@ -15,17 +18,17 @@ const Navbar = () => {
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
-
-    // 获取目标元素
     const targetElement = href === '#' ? document.documentElement : document.querySelector(href)
-
     if (targetElement) {
-      // 使用 scrollIntoView 代替直接设置 scrollTo
       targetElement.scrollIntoView({
         behavior: 'smooth',
         block: href === '#' ? 'start' : 'start',
       })
     }
+  }
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen)
   }
 
   return (
@@ -40,6 +43,7 @@ const Navbar = () => {
               {item.name}
             </Link>
           ))}
+          <LanguageSwitcher />
         </div>
       </div>
     </nav>

@@ -23,8 +23,8 @@ const rubik = Rubik({
 const siteConfig = {
   name: 'Junexus',
   description: 'I am a Full Stack Developer',
-  ogImage: 'https://mdTaquiImam.vercel.app/og-image.png',
-  url: 'https://mdTaquiImam.vercel.app',
+  ogImage: 'https://byte.ink/og-image.png',
+  url: 'https://byte.ink',
 }
 
 export const metadata: Metadata = {
@@ -39,11 +39,11 @@ export const metadata: Metadata = {
   keywords: ['Junexus', 'portfolio', 'web developer', 'web', 'web dev', 'developer', 'PROGRAMMER ', 'programmer ', 'website'],
   authors: [
     {
-      name: 'Taqui Imam',
-      url: 'https://github.com/taqui-786',
+      name: 'Junexus',
+      url: 'https://github.com/shadowDragons',
     },
   ],
-  creator: 'Taqui imam',
+  creator: 'Junexus',
 
   openGraph: {
     type: 'website',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/og-image.png`],
-    creator: '@Taquiimam14',
+    creator: '@shadow06368306',
   },
   icons: {
     icon: '/favicon.ico',
@@ -91,7 +91,7 @@ export default async function RootLayout({ children, params: { locale } }: { chi
           </main>
         </NextIntlClientProvider>
       </body>
-      <GoogleAnalytics gaId='G-40820HPGL6' />
+      {process.env.NODE_ENV === 'development' ? <></> : process.env.NEXT_PUBLIC_GA_ID ? <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> : null}
     </html>
   )
 }

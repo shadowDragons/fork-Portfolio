@@ -13,7 +13,11 @@
     "about": "About",
     "projects": "Projects",
     "contact": "Contact",
-    "greeting": "Hello👋"
+    "greeting": "Hello👋",
+    "language": {
+      "en": "English",
+      "zh": "中文 (Chinese)"
+    }
   },
   "TextRotator": {
     "role1": "Frontend Developer",

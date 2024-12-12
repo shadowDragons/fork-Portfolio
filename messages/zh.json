@@ -13,7 +13,11 @@
     "about": "关于",
     "projects": "项目",
     "contact": "联系",
-    "greeting": "你好👋"
+    "greeting": "你好👋",
+    "language": {
+      "en": "English",
+      "zh": "中文 (Chinese)"
+    }
   },
   "TextRotator": {
     "role1": "前端开发工程师",
