@@ -1,121 +1,45 @@
 'use client'
-import { cn } from '@/lib/utils'
-
-import { Briefcase, FolderGit2, GraduationCap, HomeIcon, Mail, MoreHorizontal, User } from 'lucide-react'
-
-import { Dock, DockIcon, DockItem, DockLabel } from '@/components/animation/DockAnimation'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import FramerWrapper from './animation/FramerWrapper'
-import { usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils'
+import { buttonVariants } from './ui/button'
 
 const Navbar = () => {
-  // const items = [
-  //   { name: "Home", icon: <Home />, link: "/" },
-  //   { name: "About", icon: <User />, link: "/about" },
-  //   { name: "Skills", icon: <Briefcase />, link: "/skills" },
-  //   { name: "Education", icon: <GraduationCap />, link: "/education" },
-  //   { name: "Projects", icon: <FolderGit2 />, link: "/projects" },
-  //   { name: "Contact", icon: <Mail />, link: "/contact" },
-  //   { name: "More", icon: <MoreHorizontal />, link: "/more" },
-  // ]
-  const data = [
-    {
-      title: 'Home',
-      icon: <HomeIcon className='h-full w-full ' />,
-      href: '/',
-    },
-    // {
-    //   title: 'About',
-    //   icon: (
-    //     <User className='h-full w-full ' />
-    //   ),
-    //   href: '/about',
-    // },
-    // {
-    //   title: 'Skills',
-    //   icon: <Briefcase className='h-full w-full ' />,
-    //   href: '/skills',
-    // },
-    // {
-    //   title: 'Education',
-    //   icon: <GraduationCap className='h-full w-full ' />,
-    //   href: '/education',
-    // },
-    {
-      title: 'Projects',
-      icon: <FolderGit2 className='h-full w-full ' />,
-      href: '/projects',
-    },
-    // {
-    //   title: 'Contact us',
-    //   icon: <Mail className='h-full w-full ' />,
-    //   href: '/contact',
-    // },
-    {
-      title: 'More',
-      icon: <MoreHorizontal className='h-full w-full ' />,
-      href: '/more',
-    },
+  const links = [
+    { name: '你好👋', link: '#' },
+    { name: '项目', link: '#projects' },
   ]
-  const [scrolling, setScrolling] = useState(false)
-  const pathname = usePathname()
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setScrolling(true)
-      } else {
-        setScrolling(false)
-      }
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+
+    // 获取目标元素
+    const targetElement = href === '#' ? document.documentElement : document.querySelector(href)
+
+    if (targetElement) {
+      // 使用 scrollIntoView 代替直接设置 scrollTo
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: href === '#' ? 'start' : 'start',
+      })
     }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+  }
 
   return (
-    // <DockNavbar/>
-    // <FramerWrapper className={`h-fit w-fit fixed top-5 right-0 left-0 px-5   m-auto border border-black rounded-full  p-2 bg-transparent   flex-row gap-3 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-100 max-sm:gap-1 ${scrolling ? "hidden":"flex"}`} y={-100}>
-    //   {items.map((itm) => {
-    //     return (
-    //       <TooltipProvider key={itm.name}>
-    //         <Tooltip>
-    //           <TooltipTrigger asChild>
-    //             <Link href={itm.link}
-    //               className={cn(
-    //                 buttonVariants({ variant: "ghost", size: "sm" }),"hover:text-[#2f7df4]",pathname === itm.link && "text-[#2f7df4] bg-zinc-100"
-    //               )}
-    //             >
-    //               {itm.icon}
-    //             </Link>
-    //           </TooltipTrigger>
-    //           <TooltipContent>
-    //             <p >{itm.name}</p>
-    //           </TooltipContent>
-    //         </Tooltip>
-    //       </TooltipProvider>
-    //     );
-    //   })}
-    //   </FramerWrapper>
-    <div className={`fixed top-5 right-0 left-0 px-0 sm:px-5 m-auto w-full sm:w-fit bg-transparent z-[+9999999] ${scrolling ? 'hidden' : 'block'}`}>
-      <Dock className='items-end pb-3 rounded-full'>
-        {data.map((item, idx) => (
-          <Link href={item.href} key={idx}>
-            <DockItem
-              className={cn('aspect-square rounded-full bg-gray-200 dark:bg-neutral-800', pathname === item.href && ' bg-gray-100 border border-primary}')}
-            >
-              <DockLabel>{item.title}</DockLabel>
-              <DockIcon className={cn(pathname === item.href && 'text-[#2f7df4]')}>{item.icon}</DockIcon>
-            </DockItem>
-          </Link>
-        ))}
-      </Dock>
-    </div>
+    <nav className='fixed top-0 z-50 w-full h-14 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+      <div className='flex h-14 items-center justify-between px-40 max-md:px-4'>
+        <Link href='#' onClick={e => handleScroll(e, '#')} className='font-rubik text-xl'>
+          Junexus
+        </Link>
+        <div className='flex gap-2'>
+          {links.map((item, index) => (
+            <Link key={index} href={item.link} onClick={e => handleScroll(e, item.link)} className={cn(buttonVariants({ variant: 'ghost', size: 'sm' }))}>
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </nav>
   )
 }
 

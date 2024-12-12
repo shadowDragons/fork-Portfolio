@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { Mail, Twitter } from 'lucide-react'
+import { Github, Mail, Twitter } from 'lucide-react'
 import { buttonVariants } from './ui/button'
 import Link from 'next/link'
 import FramerWrapper from './animation/FramerWrapper'
@@ -8,6 +8,7 @@ const SocialLinks = () => {
   const links = [
     { name: 'Twitter', link: 'https://x.com/shadow06368306', icon: <Twitter /> },
     { name: 'Email', link: 'mailto:shadowdragon4399@gmail.com', icon: <Mail /> },
+    { name: 'Github', link: 'https://github.com/shadowDragons', icon: <Github /> },
   ]
   return (
     <>
